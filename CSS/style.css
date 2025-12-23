@@ -122,6 +122,7 @@ section {
   border-bottom: var(--glass-border);
   display: flex;
   align-items: center;
+  color: #fff;
 }
 
 .nav-container {
@@ -218,9 +219,50 @@ section {
 
 .menu-toggle {
   display: none;
-  font-size: 1.5rem;
   cursor: pointer;
-  color: #fff;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  z-index: 1001; /* Ensure it's above the menu */
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.menu-toggle span:nth-child(1) {
+  top: 0;
+}
+
+.menu-toggle span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-toggle span:nth-child(3) {
+  bottom: 0;
+}
+
+/* Animation State */
+.menu-toggle.active span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -349,8 +391,12 @@ section {
   color: var(--secondary);
   font-size: 1.5rem;
 }
+/* About Section */
 .about-content strong {
   color: var(--secondary);
+}
+.about-content {
+  font-size: 1.25rem;
 }
 .about-content-p {
   color: var(--primary);
@@ -358,8 +404,9 @@ section {
 }
 /* Skills Section */
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
 }
 
@@ -374,6 +421,7 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  width: 160px; /* Fixed width for uniform flex items */
 }
 
 .skill-card:hover {
@@ -388,8 +436,79 @@ section {
   transition: 0.3s;
 }
 
-.skill-card:hover i {
-  color: var(--accent);
+/* Brand Specific Hover Colors */
+.skill-card.brand-html:hover i {
+  color: #e34f26;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-css:hover i {
+  color: #1572b6;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-js:hover i {
+  color: #f7df1e;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-react:hover i {
+  color: #61dafb;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-bootstrap:hover i {
+  color: #7952b3;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-tailwind:hover i {
+  color: #38bdf8;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-nextjs:hover i {
+  color: #00ff22;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-wordpress:hover i {
+  color: #21759b;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-responsive:hover i {
+  color: #0ae0ab;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-search:hover i {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-git:hover i {
+  color: #f34f29;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-debug:hover i {
+  color: #ff1100;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-crossbrowser:hover i {
+  color: #4285f4;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-uiux:hover i {
+  color: #e91e63;
+  transform: scale(1.1);
+}
+
+.skill-card.brand-darkui:hover i {
+  color: #9ca3af;
   transform: scale(1.1);
 }
 
