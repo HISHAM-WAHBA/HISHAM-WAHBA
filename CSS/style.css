@@ -643,7 +643,7 @@ section {
 }
 
 .contact-box p {
-  color: var(--text-muted);
+  color: var(--secondary);
   font-size: 1.2rem;
   margin-bottom: 40px;
 }
@@ -957,6 +957,57 @@ footer {
 
   .btn.outline {
     margin-left: 0;
+  }
+
+  /* Contact Section Responsive */
+  .contact-box {
+    padding: 60px 30px;
+    border-radius: 30px;
+  }
+  .contact-box h2 {
+    font-size: 2.2rem;
+  }
+
+  .big-btn {
+    padding: 14px 34px;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  .meta-item {
+    min-width: 100%;
+    padding: 15px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-box {
+    padding: 40px 20px;
+    border-radius: 24px;
+  }
+
+  .contact-box h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-box p {
+    font-size: 1rem;
+  }
+
+  .meta-item {
+    gap: 15px;
+    padding: 12px 20px;
+  }
+
+  .meta-item i {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .meta-text p,
+  .phone-list a {
+    font-size: 1rem;
   }
 }
 
