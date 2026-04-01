@@ -94,11 +94,11 @@ function createFloatingIcon() {
   icon.classList.add(prefix, randomIcon, "floating-icon");
 
   // Randomize properties
-  const size = Math.random() * 2 + 3; // 3rem to 5rem (more consistent size)
+  const size = Math.random() * 2 + 1.5; // 3rem to 5rem (more consistent size)
   const left = Math.random() * 100; // 0% to 100%
   const duration = Math.random() * 5 + 20; // 20s to 25s (slower, more consistent speed)
   const delay = Math.random() * 5; // 0s to 5s
-  const opacity = Math.random() * 0.2 + 0.15; // 0.15 to 0.35
+  const opacity = Math.random() * 0.2 + 0.25; // 0.15 to 0.35
 
   icon.style.fontSize = `${size}rem`;
   icon.style.left = `${left}%`;
@@ -110,7 +110,7 @@ function createFloatingIcon() {
   const colors = [
     "rgba(227, 79, 38, 0.4)", // HTML
     "rgba(21, 114, 182, 0.4)", // CSS
-    "rgba(247, 223, 30, 0.4)", // JS
+    "rgba(255, 225, 0, 0.4)", // JS
     "rgba(97, 218, 251, 0.4)", // React
     "rgba(121, 82, 179, 0.4)", // Bootstrap
     "rgba(56, 189, 248, 0.4)", // Tailwind
@@ -118,7 +118,7 @@ function createFloatingIcon() {
     "rgba(0, 255, 34, 0.4)", // Next.js
   ];
   // 30% chance to have a color, otherwise white-ish
-  if (Math.random() < 0.3) {
+  if (Math.random() < 0.4) {
     icon.style.color = colors[Math.floor(Math.random() * colors.length)];
   }
 
@@ -131,7 +131,7 @@ function createFloatingIcon() {
 }
 
 // Initial set of icons
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 4; i++) {
   createFloatingIcon();
 }
 
