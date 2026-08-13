@@ -1,353 +1,804 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Hisham Wahba — Freelance Web Developer | هشام وهبة — مطور مواقع
+    </title>
+    <meta
+      name="description"
+      content="Hisham Wahba (هشام وهبة) — Freelance Web & Front-End Developer. I build modern, responsive websites, WordPress and WooCommerce stores, and convert Figma designs into pixel-perfect web experiences."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0e17" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Performance: preconnect to font and CDN origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://unpkg.com" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HISHAM WAHBA</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-  <link rel="stylesheet" href="./CSS/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-</head>
+    <!-- Canonical + hreflang for English and Arabic (create /ar/ if you add Arabic pages) -->
+    <link rel="canonical" href="/" />
+    <link rel="alternate" href="/" hreflang="en" />
+    <link rel="alternate" href="/ar/" hreflang="ar" />
+    <link rel="alternate" href="/" hreflang="x-default" />
 
-<body>
-  <div class="bg-animation-container"></div>
-  <nav class="navbar">
-    <div class="container nav-container">
-      <a href="#" class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 6 1 12 6 18"></polyline>
-          <line x1="10" y1="20" x2="14" y2="5" class="slash"></line>
-          <polyline points="18 6 23 12 18 18"></polyline>
-        </svg>
-        HISHAM
-      </a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact" class="btn-nav">Let's Talk</a></li>
-      </ul>
-      <div class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </nav>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Open Graph / Social -->
+    <meta property="og:site_name" content="Hisham Wahba" />
+    <meta
+      property="og:title"
+      content="Hisham Wahba — Freelance Web Developer | هشام وهبة"
+    />
+    <meta
+      property="og:description"
+      content="Freelance Web Developer building modern, responsive websites, WordPress sites, and e-commerce stores. Contact Hisham for professional web development services."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/img/H.webp" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_EG" />
 
-  <header class="hero">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <span class="greeting">Hello, I'm</span>
-        <h1>HISHAM WAHBA</h1>
-        <span class="role fs-1 fw-semibold" id="typing"></span>
-        <p>
-          Building immersive web experiences where clean code meets thoughtful
-          design
-        </p>
-        <div class="actions">
-          <a href="#projects" class="btn primary">View My Work</a>
-          <a href="#contact" class="btn outline">Contact Me</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="glow-circle"></div>
-        <!-- Abstract shape or profile image placeholder -->
-        <div class="hero-image-container">
-          <img src="./img/H.webp" loading="eager" alt="Hisham Wahba - Front End Developer" class="hero-img" />
-        </div>
-      </div>
-    </div>
-  </header>
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Hisham Wahba — Freelance Web Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Modern, responsive websites, WordPress, WooCommerce, and React development by Hisham Wahba."
+    />
+    <meta name="twitter:image" content="/img/H.webp" />
 
-  <section id="about" class="about">
-    <div class="container">
-      <div class="section-header">
-        <h2>About Me</h2>
-        <p>Passion for pixel-perfect web interfaces</p>
-      </div>
-      <div class="about-content">
-        <p>
-          I am a dedicated <strong>Web Developer</strong> specializing in
-          responsive, user-centric websites. With a keen eye for design and a
-          strong command of modern web technologies, I turn ideas into clean,
-          intuitive, and seamless digital experiences.
-        </p>
-        <p class="about-content-p">
-          Certified Diploma in Frontend Development from EraaSoft Training
-          Center
-        </p>
-      </div>
-    </div>
-  </section>
+    <!-- Schema.org JSON-LD structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "name": "Hisham Wahba",
+            "alternateName": "هشام وهبة",
+            "jobTitle": "Freelance Web Developer",
+            "url": "/",
+            "sameAs": [
+              "https://github.com/HISHAM-WAHBA",
+              "https://www.linkedin.com/in/hisham-wahba-1b8392b9/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "url": "/",
+            "name": "Hisham Wahba",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Hisham Wahba"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "url": "/",
+            "name": "Hisham Wahba — Portfolio",
+            "description": "Portfolio and services of Hisham Wahba, freelance web developer."
+          },
+          {
+            "@type": "ProfessionalService",
+            "name": "Web Development Services by Hisham Wahba",
+            "url": "/services",
+            "description": "Website Development, Landing Pages, WordPress, WooCommerce, Figma to Website, Redesign, Maintenance, Responsive Optimization.",
+            "provider": {
+              "@type": "Person",
+              "name": "Hisham Wahba"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
 
-  <section id="skills" class="skills">
-    <div class="container">
-      <div class="section-header">
-        <h2>My Digital Craftsmanship</h2>
-        <p>
-          A thoughtfully selected toolkit that bridges design and development,
-          enabling me to build clean, responsive, and high-performing web
-          experiences.
-        </p>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-card brand-html">
-          <i class="fab fa-html5"></i> <span>HTML</span>
-        </div>
-        <div class="skill-card brand-css">
-          <i class="fab fa-css3-alt"></i> <span>CSS</span>
-        </div>
-        <div class="skill-card brand-bootstrap">
-          <i class="fab fa-bootstrap"></i> <span>Bootstrap</span>
-        </div>
-        <div class="skill-card brand-tailwind">
-          <i class="fas fa-wind"></i> <span>Tailwind</span>
-        </div>
-        <div class="skill-card brand-js">
-          <i class="fab fa-js"></i> <span>JavaScript</span>
-        </div>
-        <div class="skill-card brand-react">
-          <i class="fab fa-react"></i> <span>React</span>
-        </div>
-        <div class="skill-card brand-nextjs">
-          <i class="fas fa-layer-group"></i> <span>Next.js</span>
-        </div>
-        <div class="skill-card brand-wordpress">
-          <i class="fab fa-wordpress"></i> <span>WordPress</span>
-        </div>
-        <div class="skill-card brand-responsive">
-          <i class="fas fa-mobile-alt"></i> <span>Responsive</span>
-        </div>
-        <div class="skill-card brand-search">
-          <i class="fas fa-search"></i> <span>Deep Searcher</span>
-        </div>
-        <div class="skill-card brand-git">
-          <i class="fab fa-github"></i> <span>Git & GitHub</span>
-        </div>
-        <div class="skill-card brand-debug">
-          <i class="fas fa-bug"></i> <span>Debugging</span>
-        </div>
-        <div class="skill-card brand-crossbrowser">
-          <i class="fas fa-globe"></i> <span>Cross-Browser</span>
-        </div>
-        <div class="skill-card brand-uiux">
-          <i class="fas fa-pencil-ruler"></i>
-          <span>UI / UX Fundamentals</span>
-        </div>
-        <div class="skill-card brand-darkui">
-          <i class="fas fa-moon"></i> <span>Dark UI</span>
+  <body>
+    <div class="bg-animation-container"></div>
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <div class="container nav-container">
+        <a href="#" class="logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="6 6 1 12 6 18"></polyline>
+            <line x1="10" y1="20" x2="14" y2="5" class="slash"></line>
+            <polyline points="18 6 23 12 18 18"></polyline>
+          </svg>
+          HISHAM
+        </a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact" class="btn-nav">Let's Talk</a></li>
+        </ul>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <section id="projects" class="projects">
-    <div class="container">
-      <div class="section-header">
-        <h2>My Featured Projects</h2>
-        <p>
-          A selection of recent projects where design thinking meets solid
-          front-end development.
-        </p>
-      </div>
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <div class="card project-card">
-          <div class="project-image">
-            <img src="./img/vintage.png" loading="lazy" alt="Vintage Store" />
-          </div>
-          <div class="card-content">
-            <h3>Vintage Store</h3>
-            <p>
-              My previous portfolio site showcasing evolution in design and
-              coding skills.
-            </p>
-            <div class="project-links">
-              <a href="https://vintage-store-sigma.vercel.app/" target="_blank" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Live Demo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Project 2 -->
-        <div class="card project-card">
-          <div class="project-image">
-            <img src="./img/Shimaa Elshayeb.png" loading="lazy" alt="Shimaa Elshayeb" />
-          </div>
-          <div class="card-content">
-            <h3>Shimaa Elshayeb</h3>
-            <p>
-              My previous portfolio site showcasing evolution in design and
-              coding skills.
-            </p>
-            <div class="project-links">
-              <a href="https://shaymaa-elshayeb.vercel.app/" target="_blank" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Live Demo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Project 3 -->
-        <div class="card project-card">
-          <div class="project-image">
-            <img src="./img/Gaming Design.png" loading="lazy" alt="Gaming Design" />
-          </div>
-          <div class="card-content">
-            <h3>Gaming Design</h3>
-            <p>
-              A modern and responsive gaming design project that showcases the
-              latest trends in gaming design.
-            </p>
-            <div class="project-links">
-              <a href="https://med-project-pi.vercel.app/" target="_blank" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Live Demo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Project 4 -->
-        <div class="card project-card">
-          <div class="project-image">
-            <img src="./img/Re Media.jpeg" loading="lazy" alt="Re Media" />
-          </div>
-          <div class="card-content">
-            <h3>Re Media</h3>
-            <p>
-              A modern and responsive media design project that showcases the
-              latest trends in media design.
-            </p>
-            <div class="project-links">
-              <a href="https://re-media.vercel.app/" target="_blank" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Live Demo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Project 5 -->
-        <div class="card project-card">
-          <div class="project-image">
-            <img src="./img/Re Music.png" loading="lazy" alt="Re Music" />
-          </div>
-          <div class="card-content">
-            <h3>Re Music</h3>
-            <p>
-              My previous portfolio site showcasing evolution in design and
-              coding skills.
-            </p>
-            <div class="project-links">
-              <a href="https://re-music-xi.vercel.app/" target="_blank" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Live Demo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Project 6 -->
-        <div class="card project-card">
-          <div class="project-image">
-            <img src="./img/Re Studios.png" loading="lazy" alt="Re Studios" />
-          </div>
-          <div class="card-content">
-            <h3>Re Studios</h3>
-            <p>
-              My previous portfolio site showcasing evolution in design and
-              coding skills.
-            </p>
-            <div class="project-links">
-              <a href="https://re-stadios.vercel.app/" target="_blank" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Live Demo</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="container contact-container">
-      <div class="contact-box">
-        <h2>Let's Work Together</h2>
-        <p>
-          Have a project in mind? Looking for a new team member? I'm just a
-          click away.
-        </p>
-
-        <div class="contact-actions">
-          <div class="main-buttons">
-            <a href="mailto:hisham.wahba@richardelhaj.media" class="btn primary big-btn">
-              <i class="fas fa-envelope"></i> Start a Project
-            </a>
-            <a href="https://wa.me/2001553579114" target="_blank" class="btn whatsapp big-btn">
-              <i class="fab fa-whatsapp"></i> Say Hello
+    <header class="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="greeting">Hello, I'm</span>
+          <h1>HISHAM WAHBA</h1>
+          <span class="role fs-1 fw-semibold" id="typing"></span>
+          <p>
+            Building immersive web experiences where clean code meets thoughtful
+            design
+          </p>
+          <div class="actions">
+            <a href="#projects" class="btn primary">View My Work</a>
+            <a href="#contact" class="btn outline">Contact Me</a>
+            <a
+              href="./CV/Hisham Mohamed CV.docx"
+              download
+              class="btn resume-download"
+            >
+              <i class="fas fa-download"></i> Download Resume
             </a>
           </div>
+        </div>
+        <div class="hero-visual">
+          <div class="glow-circle"></div>
+          <!-- Abstract shape or profile image placeholder -->
+          <div class="hero-image-container">
+            <img
+              src="./img/H.webp"
+              loading="eager"
+              alt="Hisham Wahba - Front End Developer"
+              class="hero-img"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
 
-          <div class="contact-meta">
-            <div class="meta-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <div class="meta-text">
-                <span>Location</span>
-                <p>Giza, Egypt</p>
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>About Me</h2>
+          <p>Passion for pixel-perfect web interfaces</p>
+        </div>
+        <div class="about-content">
+          <p>
+            I am a dedicated <strong>Web Developer</strong> specializing in
+            responsive, user-centric websites. With a keen eye for design and a
+            strong command of modern web technologies, I turn ideas into clean,
+            intuitive, and seamless digital experiences.
+          </p>
+          <p class="about-content-p">
+            Certified Diploma in Frontend Development from EraaSoft Training
+            Center
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-header">
+          <h2>Services</h2>
+          <p>
+            Services I offer to help businesses grow with modern, responsive
+            websites.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon"><i class="fas fa-code"></i></div>
+            <h4>Website Development</h4>
+            <p>
+              Build complete modern, responsive websites for businesses and
+              individuals.
+            </p>
+            <a href="#contact" class="btn primary service-cta">Get Started</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon"><i class="fas fa-bullseye"></i></div>
+            <h4>Landing Page</h4>
+            <p>
+              High-converting, responsive landing pages for products, campaigns,
+              and personal brands.
+            </p>
+            <a href="#contact" class="btn primary service-cta"
+              >Request Service</a
+            >
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon"><i class="fab fa-wordpress"></i></div>
+            <h4>WordPress Website</h4>
+            <p>
+              Professional WordPress websites with custom layouts and responsive
+              design.
+            </p>
+            <a href="#contact" class="btn primary service-cta">Get Started</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon"><i class="fas fa-cart-shopping"></i></div>
+            <h4>WooCommerce Store</h4>
+            <p>
+              Complete e-commerce stores with products, categories, cart,
+              checkout, and customization.
+            </p>
+            <a href="#contact" class="btn primary service-cta"
+              >Request Service</a
+            >
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon"><i class="fab fa-figma"></i></div>
+            <h4>Figma to Website</h4>
+            <p>
+              Convert Figma designs into pixel-perfect, responsive websites.
+            </p>
+            <a href="#contact" class="btn primary service-cta">Get Started</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon"><i class="fas fa-redo"></i></div>
+            <h4>Website Redesign</h4>
+            <p>
+              Modernize existing websites and improve UI, UX, responsiveness,
+              and visual appearance.
+            </p>
+            <a href="#contact" class="btn primary service-cta"
+              >Request Service</a
+            >
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon"><i class="fas fa-tools"></i></div>
+            <h4>WordPress Maintenance</h4>
+            <p>
+              Updates, content changes, bug fixes, layout adjustments, and
+              ongoing website support.
+            </p>
+            <a href="#contact" class="btn primary service-cta">Get Started</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-mobile-screen-button"></i>
+            </div>
+            <h4>Responsive Optimization</h4>
+            <p>
+              Fix and optimize websites for mobile, tablet, and desktop screens.
+            </p>
+            <a href="#contact" class="btn primary service-cta"
+              >Request Service</a
+            >
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2>My Digital Craftsmanship</h2>
+          <p>
+            A thoughtfully selected toolkit that bridges design and development,
+            enabling me to build clean, responsive, and high-performing web
+            experiences.
+          </p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card brand-html">
+            <i class="fab fa-html5"></i> <span>HTML</span>
+          </div>
+          <div class="skill-card brand-css">
+            <i class="fab fa-css3-alt"></i> <span>CSS</span>
+          </div>
+          <div class="skill-card brand-bootstrap">
+            <i class="fab fa-bootstrap"></i> <span>Bootstrap</span>
+          </div>
+          <div class="skill-card brand-tailwind">
+            <i class="fas fa-wind"></i> <span>Tailwind</span>
+          </div>
+          <div class="skill-card brand-js">
+            <i class="fab fa-js"></i> <span>JavaScript</span>
+          </div>
+          <div class="skill-card brand-react">
+            <i class="fab fa-react"></i> <span>React</span>
+          </div>
+          <div class="skill-card brand-nextjs">
+            <i class="fas fa-layer-group"></i> <span>Next.js</span>
+          </div>
+          <div class="skill-card brand-wordpress">
+            <i class="fab fa-wordpress"></i> <span>WordPress</span>
+          </div>
+          <div class="skill-card brand-responsive">
+            <i class="fas fa-mobile-alt"></i> <span>Responsive</span>
+          </div>
+          <div class="skill-card brand-search">
+            <i class="fas fa-search"></i> <span>Deep Searcher</span>
+          </div>
+          <div class="skill-card brand-git">
+            <i class="fab fa-github"></i> <span>Git & GitHub</span>
+          </div>
+          <div class="skill-card brand-debug">
+            <i class="fas fa-bug"></i> <span>Debugging</span>
+          </div>
+          <div class="skill-card brand-crossbrowser">
+            <i class="fas fa-globe"></i> <span>Cross-Browser</span>
+          </div>
+          <div class="skill-card brand-uiux">
+            <i class="fas fa-pencil-ruler"></i>
+            <span>UI / UX Fundamentals</span>
+          </div>
+          <div class="skill-card brand-darkui">
+            <i class="fas fa-moon"></i> <span>Dark UI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2>My Featured Projects</h2>
+          <p>
+            A selection of recent projects where design thinking meets solid
+            front-end development.
+          </p>
+        </div>
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="card project-card">
+            <div class="project-image">
+              <img
+                src="./img/vintage.png"
+                loading="lazy"
+                alt="Vintage Store — project by Hisham Wahba"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Vintage Store</h3>
+              <p>
+                A modern eCommerce app built with React, focused on clean
+                design, performance, and a seamless shopping experience.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://vintage-store-sigma.vercel.app/"
+                  target="_blank"
+                  class="project-link demo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live</span>
+                </a>
               </div>
             </div>
-            <div class="meta-item">
-              <i class="fas fa-phone-alt"></i>
-              <div class="meta-text">
-                <span>Phone Numbers</span>
-                <div class="phone-list">
-                  <a href="tel:01553579114">01553579114</a>
-                  <a href="tel:01005862318">01005862318</a>
+          </div>
+          <!-- Project 2 -->
+          <div class="card project-card">
+            <div class="project-image">
+              <img
+                src="./img/Mahmoud Wahba.png"
+                loading="lazy"
+                alt="Mahmoud Wahba — project by Hisham Wahba"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Mahmoud Wahba</h3>
+              <p>
+                A dark, immersive website built for a seasoned horror author,
+                focused on storytelling, atmosphere, and user engagement.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://mahmoud-wahba.vercel.app/"
+                  target="_blank"
+                  class="project-link demo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="card project-card">
+            <div class="project-image">
+              <img
+                src="./img/Fatma Eid.png"
+                loading="lazy"
+                alt="Fatma Eid — project by Hisham Wahba"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Fatma Eid</h3>
+              <p>
+                A creative website for a dietitian, focused on a clean, modern
+                design that highlights her services and expertise.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://fatmaeid.com/"
+                  target="_blank"
+                  class="project-link demo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div class="card project-card">
+            <div class="project-image">
+              <img
+                src="./img/Mostafa Shawky.png"
+                loading="lazy"
+                alt="Mostafa Shawky — project by Hisham Wahba"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Mostafa Shawky</h3>
+              <p>
+                A responsive website for a professional chess coach and player,
+                focused on a clean, modern design that highlights his services
+                and expertise.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://mostafashawky.net/"
+                  target="_blank"
+                  class="project-link demo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 5 -->
+          <div class="card project-card">
+            <div class="project-image">
+              <img
+                src="./img/Shimaa Elshayeb.png"
+                loading="lazy"
+                alt="Shimaa Elshayeb — project by Hisham Wahba"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Shimaa Elshayeb</h3>
+              <p>
+                A responsive website built with Vanilla JavaScript, focusing on
+                clean code, performance, and smooth user interactions.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://shaimaaelshayeb.com/"
+                  target="_blank"
+                  class="project-link demo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 6 -->
+          <div class="card project-card">
+            <div class="project-image">
+              <img
+                src="./img/Gaming Design.png"
+                loading="lazy"
+                alt="Gaming Design — project by Hisham Wahba"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Gaming Design</h3>
+              <p>
+                A modern and responsive gaming design project that showcases the
+                latest trends in gaming design.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://med-project-pi.vercel.app/"
+                  target="_blank"
+                  class="project-link demo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 7 -->
+          <div class="card project-card">
+            <div class="project-image">
+              <img
+                src="./img/Re Media.jpeg"
+                loading="lazy"
+                alt="Re Media — project by Hisham Wahba"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Re Media</h3>
+              <p>
+                A modern and responsive media design project that showcases the
+                latest trends in media design.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://www.richardelhaj.media/"
+                  target="_blank"
+                  class="project-link demo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 8 -->
+          <div class="card project-card">
+            <div class="project-image">
+              <img
+                src="./img/Re Music.png"
+                loading="lazy"
+                alt="Re Music — project by Hisham Wahba"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Re Music</h3>
+              <p>
+                An interactive music web app built with Vanilla JavaScript,
+                focused on smooth playback, clean UI, and dynamic user
+                interactions.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://re-music.org/"
+                  target="_blank"
+                  class="project-link demo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 9 -->
+          <div class="card project-card">
+            <div class="project-image">
+              <img
+                src="./img/Re Studios.png"
+                loading="lazy"
+                alt="Re Studios — project by Hisham Wahba"
+              />
+            </div>
+            <div class="card-content">
+              <h3>Re Studios</h3>
+              <p>
+                A modern studio website built with Vanilla JavaScript, focused
+                on clean design, smooth interactions, and performance.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://re-studios.net/"
+                  target="_blank"
+                  class="project-link demo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Project 10 -->
+          <div class="card project-card">
+            <div class="project-image">
+              <img
+                src="./img/Noon.png"
+                loading="lazy"
+                alt="Noon Publishing — project by Hisham Wahba"
+              />
+            </div>
+            <div class="card-content">
+              <h3>noon publishing</h3>
+              <p>
+                A modern E-commerce website built with WordPress, focused on
+                clean design, smooth interactions, and fast performance.
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://noonpublishing.com/"
+                  target="_blank"
+                  class="project-link demo"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container contact-container">
+        <div class="contact-box">
+          <h2>Let's Work Together</h2>
+          <p>
+            Have a project in mind? Looking for a new team member? I'm just a
+            click away.
+          </p>
+
+          <div class="contact-actions">
+            <div class="main-buttons">
+              <a
+                href="mailto:hisham.wahba@richardelhaj.media"
+                class="btn primary big-btn"
+              >
+                <i class="fas fa-envelope"></i> Start a Project
+              </a>
+              <a
+                href="https://wa.me/2001553579114"
+                target="_blank"
+                class="btn whatsapp big-btn"
+              >
+                <i class="fab fa-whatsapp"></i> Say Hello
+              </a>
+              <a
+                href="./CV/Hisham Mohamed CV.docx"
+                download
+                class="btn resume-download-contact big-btn"
+              >
+                <i class="fas fa-file-arrow-down"></i>
+                <span>Download My Resume</span>
+                <i class="fas fa-arrow-down resume-arrow"></i>
+              </a>
+            </div>
+
+            <div class="contact-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="meta-text">
+                  <span>Location</span>
+                  <p>Giza, Egypt</p>
+                </div>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-phone-alt"></i>
+                <div class="meta-text">
+                  <span>Phone Numbers</span>
+                  <div class="phone-list">
+                    <a href="tel:01553579114">01553579114</a>
+                    <a href="tel:01005862318">01005862318</a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="social-links-container">
-            <h3>Follow Me</h3>
-            <div class="social-circles">
-              <a href="https://github.com/HISHAM-WAHBA" target="_blank" class="social-circle github"><i
-                  class="fab fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/hisham-wahba-1b8392b9/" target="_blank"
-                class="social-circle linkedin"><i class="fab fa-linkedin"></i></a>
-              <a href="https://www.facebook.com/HISHAM.WAHBA.77" target="_blank" class="social-circle facebook"><i
-                  class="fab fa-facebook-f"></i></a>
+            <div class="social-links-container">
+              <h3>Follow Me</h3>
+              <div class="social-circles">
+                <a
+                  href="https://github.com/HISHAM-WAHBA"
+                  target="_blank"
+                  class="social-circle github"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/hisham-wahba-1b8392b9/"
+                  target="_blank"
+                  class="social-circle linkedin"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a
+                  href="https://www.facebook.com/HISHAM.WAHBA.77"
+                  target="_blank"
+                  class="social-circle facebook"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 Hisham Wahba. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer>
+      <div class="container">
+        <p>© 2025 Hisham Wahba. All rights reserved.</p>
+      </div>
+    </footer>
 
-  <script src="./JS/main.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <script>
-    var typed = new Typed("#typing", {
-      strings: ["Web Developer", "Designer", "Freelancer"],
-      typeSpeed: 100,
-      backSpeed: 50,
-      loop: true,
-      cursorChar: "|",
-    });
-  </script>
-</body>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+      <svg class="progress-ring" width="56" height="56">
+        <circle
+          class="progress-ring__circle-bg"
+          stroke="rgba(255, 255, 255, 0.05)"
+          stroke-width="3"
+          fill="transparent"
+          r="24"
+          cx="28"
+          cy="28"
+        />
+        <circle
+          class="progress-ring__circle"
+          stroke="url(#progress-gradient)"
+          stroke-width="3"
+          fill="transparent"
+          r="24"
+          cx="28"
+          cy="28"
+        />
+        <defs>
+          <linearGradient
+            id="progress-gradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stop-color="var(--secondary)" />
+            <stop offset="100%" stop-color="var(--primary)" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="scroll-to-top-icon">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+    </button>
 
+    <script src="./JS/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoYz1tK5Qv2Dk4lZ9ZZ+M2mY5n0I1z6a1Z2n5q9ctF5b3v9"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#typing", {
+        strings: ["Web Developer", "Designer", "Freelancer"],
+        typeSpeed: 100,
+        backSpeed: 50,
+        loop: true,
+        cursorChar: "|",
+      });
+    </script>
+  </body>
 </html>
