@@ -14,7 +14,6 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
     if (navLinks.classList.contains("active")) {
       navLinks.classList.remove("active");
-      navLinks.classList.remove("active");
       menuToggle.classList.remove("active");
     }
   });
@@ -37,7 +36,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Select elements to animate
 const animatedElements = document.querySelectorAll(
-  ".hero-content, .hero-visual, .section-header, .about-content, .skill-card, .project-card, .contact-box"
+  ".hero-content, .hero-visual, .section-header, .about-content, .skill-card, .project-card, .contact-box",
 );
 
 animatedElements.forEach((el, index) => {
@@ -137,3 +136,107 @@ for (let i = 0; i < 4; i++) {
 
 // Spawn new icons periodically
 setInterval(createFloatingIcon, 3500);
+
+// Scroll to Top Button Logic
+const scrollToTopBtn = document.getElementById("scrollToTop");
+const progressCircle = document.querySelector(".progress-ring__circle");
+
+if (scrollToTopBtn && progressCircle) {
+  const circumference = 2 * Math.PI * 24; // 150.796
+  progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+  progressCircle.style.strokeDashoffset = circumference;
+
+  function updateScrollProgress() {
+    const scrollHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPosition = window.scrollY;
+
+    // Update SVG progress ring
+    if (scrollHeight > 0) {
+      const scrollPercent = scrollPosition / scrollHeight;
+      const offset = circumference - scrollPercent * circumference;
+      progressCircle.style.strokeDashoffset = offset;
+    }
+
+    // Toggle button visibility after the first section (Hero section, which is ~100vh)
+    const heroHeight = window.innerHeight * 0.8;
+    if (scrollPosition > heroHeight) {
+      scrollToTopBtn.classList.add("active");
+    } else {
+      scrollToTopBtn.classList.remove("active");
+    }
+  }
+
+  // Scroll smoothly to top when clicked
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+  // Track scrolling
+  window.addEventListener("scroll", updateScrollProgress);
+  // Run once to initialize
+  updateScrollProgress();
+}
+
+// Highlight active nav link based on visible section (robust for fixed navbar)
+(function setupActiveNav() {
+  const navLinks = document.querySelectorAll(".nav-links a");
+  const sections = Array.from(document.querySelectorAll("section[id]"));
+  if (!navLinks.length || !sections.length) return;
+
+  const navBar = document.querySelector(".navbar");
+  const navHeight = navBar ? navBar.offsetHeight : 60;
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      // pick the most visible intersecting section
+      const visible = entries.filter((e) => e.isIntersecting);
+      if (visible.length === 0) return;
+      visible.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      const topId = visible[0].target.id;
+      navLinks.forEach((a) => {
+        if (a.getAttribute("href") === `#${topId}`)
+          a.classList.add("is-active");
+        else a.classList.remove("is-active");
+      });
+    },
+    {
+      root: null,
+      rootMargin: `-${navHeight}px 0px -40% 0px`,
+      threshold: [0, 0.25, 0.5, 0.75, 1],
+    },
+  );
+
+  sections.forEach((s) => io.observe(s));
+
+  // fallback: update active link based on scroll position (fast, throttled)
+  function updateByScroll() {
+    const scrollPos = window.scrollY + navHeight + 10;
+    let current = sections[0];
+    for (const s of sections) {
+      if (s.offsetTop <= scrollPos) current = s;
+    }
+    navLinks.forEach((a) => {
+      if (a.getAttribute("href") === `#${current.id}`)
+        a.classList.add("is-active");
+      else a.classList.remove("is-active");
+    });
+  }
+
+  function throttle(fn, wait) {
+    let last = 0;
+    return function () {
+      const now = Date.now();
+      if (now - last > wait) {
+        last = now;
+        fn();
+      }
+    };
+  }
+
+  window.addEventListener("scroll", throttle(updateByScroll, 100));
+  window.addEventListener("load", updateByScroll);
+})();
