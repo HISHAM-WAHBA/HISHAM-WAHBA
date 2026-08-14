@@ -18,24 +18,41 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./CSS/style.css" />
+    <!-- Load critical fonts via link (display=swap) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Load main stylesheet with preload+onload to reduce render-blocking safely -->
+    <link
+      rel="preload"
+      href="/CSS/style.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript><link rel="stylesheet" href="/CSS/style.css" /></noscript>
     <!-- Performance: preconnect to font and CDN origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="preconnect" href="https://unpkg.com" />
+    <!-- Preload LCP hero image -->
+    <link rel="preload" as="image" href="/img/H.webp" />
 
-    <!-- Canonical + hreflang for English and Arabic (create /ar/ if you add Arabic pages) -->
-    <link rel="canonical" href="/" />
-    <link rel="alternate" href="/" hreflang="en" />
-    <link rel="alternate" href="/ar/" hreflang="ar" />
-    <link rel="alternate" href="/" hreflang="x-default" />
+    <!-- Canonical + hreflang for English and Arabic -->
+    <link rel="canonical" href="https://hishamwahba.zya.me/" />
+    <link rel="alternate" href="https://hishamwahba.zya.me/" hreflang="en" />
+    <link rel="alternate" href="https://hishamwahba.zya.me/ar/" hreflang="ar" />
+    <link
+      rel="alternate"
+      href="https://hishamwahba.zya.me/"
+      hreflang="x-default"
+    />
 
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -51,8 +68,8 @@
       content="Freelance Web Developer building modern, responsive websites, WordPress sites, and e-commerce stores. Contact Hisham for professional web development services."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="/" />
-    <meta property="og:image" content="/img/H.webp" />
+    <meta property="og:url" content="https://hishamwahba.zya.me/" />
+    <meta property="og:image" content="https://hishamwahba.zya.me/img/H.webp" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_EG" />
 
@@ -78,7 +95,7 @@
             "name": "Hisham Wahba",
             "alternateName": "هشام وهبة",
             "jobTitle": "Freelance Web Developer",
-            "url": "/",
+            "url": "https://hishamwahba.zya.me/",
             "sameAs": [
               "https://github.com/HISHAM-WAHBA",
               "https://www.linkedin.com/in/hisham-wahba-1b8392b9/"
@@ -86,7 +103,7 @@
           },
           {
             "@type": "WebSite",
-            "url": "/",
+            "url": "https://hishamwahba.zya.me/",
             "name": "Hisham Wahba",
             "publisher": {
               "@type": "Organization",
@@ -95,14 +112,14 @@
           },
           {
             "@type": "WebPage",
-            "url": "/",
+            "url": "https://hishamwahba.zya.me/",
             "name": "Hisham Wahba — Portfolio",
             "description": "Portfolio and services of Hisham Wahba, freelance web developer."
           },
           {
             "@type": "ProfessionalService",
             "name": "Web Development Services by Hisham Wahba",
-            "url": "/services",
+            "url": "https://hishamwahba.zya.me/services",
             "description": "Website Development, Landing Pages, WordPress, WooCommerce, Figma to Website, Redesign, Maintenance, Responsive Optimization.",
             "provider": {
               "@type": "Person",
@@ -163,7 +180,7 @@
             <a href="#projects" class="btn primary">View My Work</a>
             <a href="#contact" class="btn outline">Contact Me</a>
             <a
-              href="./CV/Hisham Mohamed CV.docx"
+              href="./Resume/Hisham Mohamed Resume.docx"
               download
               class="btn resume-download"
             >
@@ -178,6 +195,8 @@
             <img
               src="./img/H.webp"
               loading="eager"
+              width="380"
+              height="380"
               alt="Hisham Wahba - Front End Developer"
               class="hero-img"
             />
@@ -386,6 +405,8 @@
               <img
                 src="./img/vintage.png"
                 loading="lazy"
+                width="1600"
+                height="1000"
                 alt="Vintage Store — project by Hisham Wahba"
               />
             </div>
@@ -413,6 +434,8 @@
               <img
                 src="./img/Mahmoud Wahba.png"
                 loading="lazy"
+                width="1600"
+                height="1000"
                 alt="Mahmoud Wahba — project by Hisham Wahba"
               />
             </div>
@@ -440,6 +463,8 @@
               <img
                 src="./img/Fatma Eid.png"
                 loading="lazy"
+                width="1600"
+                height="1000"
                 alt="Fatma Eid — project by Hisham Wahba"
               />
             </div>
@@ -467,6 +492,8 @@
               <img
                 src="./img/Mostafa Shawky.png"
                 loading="lazy"
+                width="1600"
+                height="1000"
                 alt="Mostafa Shawky — project by Hisham Wahba"
               />
             </div>
@@ -495,6 +522,8 @@
               <img
                 src="./img/Shimaa Elshayeb.png"
                 loading="lazy"
+                width="1600"
+                height="1000"
                 alt="Shimaa Elshayeb — project by Hisham Wahba"
               />
             </div>
@@ -522,6 +551,8 @@
               <img
                 src="./img/Gaming Design.png"
                 loading="lazy"
+                width="1600"
+                height="1000"
                 alt="Gaming Design — project by Hisham Wahba"
               />
             </div>
@@ -549,6 +580,8 @@
               <img
                 src="./img/Re Media.jpeg"
                 loading="lazy"
+                width="1600"
+                height="1000"
                 alt="Re Media — project by Hisham Wahba"
               />
             </div>
@@ -576,6 +609,8 @@
               <img
                 src="./img/Re Music.png"
                 loading="lazy"
+                width="1600"
+                height="1000"
                 alt="Re Music — project by Hisham Wahba"
               />
             </div>
@@ -604,6 +639,8 @@
               <img
                 src="./img/Re Studios.png"
                 loading="lazy"
+                width="1600"
+                height="1000"
                 alt="Re Studios — project by Hisham Wahba"
               />
             </div>
@@ -631,6 +668,8 @@
               <img
                 src="./img/Noon.png"
                 loading="lazy"
+                width="1600"
+                height="1000"
                 alt="Noon Publishing — project by Hisham Wahba"
               />
             </div>
@@ -681,7 +720,7 @@
                 <i class="fab fa-whatsapp"></i> Say Hello
               </a>
               <a
-                href="./CV/Hisham Mohamed CV.docx"
+                href="./Resume/Hisham Mohamed Resume.docx"
                 download
                 class="btn resume-download-contact big-btn"
               >
@@ -784,20 +823,28 @@
       </div>
     </button>
 
-    <script src="./JS/main.js"></script>
+    <script src="/JS/main.js" defer></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoYz1tK5Qv2Dk4lZ9ZZ+M2mY5n0I1z6a1Z2n5q9ctF5b3v9"
       crossorigin="anonymous"
+      defer
     ></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script
+      src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"
+      defer
+    ></script>
     <script>
-      var typed = new Typed("#typing", {
-        strings: ["Web Developer", "Designer", "Freelancer"],
-        typeSpeed: 100,
-        backSpeed: 50,
-        loop: true,
-        cursorChar: "|",
+      window.addEventListener("DOMContentLoaded", function () {
+        if (typeof Typed !== "undefined") {
+          new Typed("#typing", {
+            strings: ["Web Developer", "Designer", "Freelancer"],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true,
+            cursorChar: "|",
+          });
+        }
       });
     </script>
   </body>

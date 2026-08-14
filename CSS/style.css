@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
-
 :root {
   --bg-dark: #0a0e17;
+  --container-max: 1200px;
   --bg-card: rgba(255, 255, 255, 0.05);
   --bg-card-hover: rgba(255, 255, 255, 0.1);
   --primary: #4cc9f0;
@@ -58,7 +57,10 @@ h4 {
 a {
   text-decoration: none;
   color: inherit;
-  transition: all 0.3s ease;
+  transition:
+    color 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
 }
 
 ul {
@@ -66,13 +68,13 @@ ul {
 }
 
 section {
-  padding: 80px 0;
+  padding: clamp(48px, 6vw, 80px) 0;
   position: relative;
 }
 
 .container {
   width: 94%;
-  max-width: 1200px;
+  max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -80,7 +82,7 @@ section {
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 18px;
   justify-content: center;
 }
 
@@ -92,19 +94,29 @@ section {
   font-weight: 600;
   border-radius: 999px;
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.2, 0.9, 0.2, 1);
+  transition:
+    transform 0.28s cubic-bezier(0.2, 0.9, 0.2, 1),
+    box-shadow 0.28s ease;
   letter-spacing: 0.2px;
+}
+
+/* Focus styles for accessibility */
+.btn:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(76, 201, 240, 0.18);
+  outline-offset: 3px;
+  border-radius: 12px;
 }
 
 .btn.primary {
   background: var(--gradient-main);
   color: #fff;
-  box-shadow: 0 4px 15px rgba(67, 97, 238, 0.4);
+  box-shadow: 0 6px 22px rgba(67, 97, 238, 0.28);
 }
 
 .btn.primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(67, 97, 238, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(67, 97, 238, 0.22);
 }
 
 .btn.outline {
@@ -114,7 +126,10 @@ section {
 }
 
 .btn.outline:hover {
-  background: rgba(76, 201, 240, 0.1);
+  background: rgba(76, 201, 240, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.02),
+    0 8px 24px rgba(67, 97, 238, 0.06);
 }
 
 /* Resume Download Button — Hero */
@@ -136,6 +151,12 @@ section {
 
 .btn.resume-download:hover i {
   transform: translateY(3px);
+}
+
+/* Active/press states */
+.btn:active {
+  transform: translateY(-1px) scale(0.998);
+  box-shadow: 0 6px 18px rgba(2, 12, 27, 0.12) inset;
 }
 
 /* Resume Download Button — Contact Section */
@@ -251,7 +272,7 @@ section {
 
 .nav-links {
   display: flex;
-  gap: 40px;
+  gap: 28px;
   align-items: center;
   margin: 0%;
 }
@@ -452,6 +473,22 @@ section {
   gap: 50px;
 }
 
+@media (max-width: 1024px) {
+  .hero-container {
+    gap: 32px;
+  }
+  .hero-image-container {
+    width: 320px;
+    height: 320px;
+  }
+  .hero-visual {
+    height: 420px;
+  }
+  .contact-box {
+    padding: 60px 40px;
+  }
+}
+
 .hero-content {
   z-index: 2;
 }
@@ -466,7 +503,7 @@ section {
 }
 
 .hero h1 {
-  font-size: 3.8rem;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
   margin-bottom: 10px;
   background: linear-gradient(to right, #fff, #a5b4fc);
   -webkit-background-clip: text;
@@ -475,9 +512,9 @@ section {
 }
 
 .role {
-  font-size: 2rem;
+  font-size: clamp(1rem, 2.6vw, 2rem);
   color: var(--secondary);
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-weight: 600;
 }
 
@@ -560,7 +597,7 @@ section {
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
   margin-bottom: 10px;
 }
 
@@ -697,7 +734,7 @@ section {
 /* Projects Section (cleaned) */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
 }
 
@@ -708,7 +745,7 @@ section {
     rgba(255, 255, 255, 0.01)
   );
   border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 18px;
+  border-radius: 16px;
   overflow: hidden;
   transition:
     transform 0.36s cubic-bezier(0.2, 0.9, 0.2, 1),
@@ -724,6 +761,10 @@ section {
     0 18px 40px rgba(2, 12, 27, 0.55),
     0 6px 18px rgba(76, 201, 240, 0.06);
   border-color: rgba(76, 201, 240, 0.12);
+}
+
+.project-card {
+  min-height: 340px;
 }
 
 .project-image {
@@ -742,6 +783,7 @@ section {
     transform 0.6s ease,
     filter 0.4s ease,
     opacity 0.3s ease;
+  will-change: transform;
 }
 
 .project-image::after {
@@ -824,6 +866,14 @@ section {
 }
 .project-link.demo:hover {
   color: #4cc9f0;
+}
+
+.project-link {
+  backdrop-filter: blur(4px);
+}
+.project-link:focus-visible {
+  outline: 3px solid rgba(76, 201, 240, 0.14);
+  outline-offset: 3px;
 }
 
 /* Contact Section */
